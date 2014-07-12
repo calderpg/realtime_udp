@@ -26,7 +26,7 @@ else()
     ## Set include path
     include_directories(include)
     ## Make the library
-    add_library(${PROJECT_NAME} src/realtime_udp.cpp)
+    add_library(${PROJECT_NAME} SHARED src/realtime_udp.cpp)
     target_link_libraries(${PROJECT_NAME} rt)
 endif()
 
