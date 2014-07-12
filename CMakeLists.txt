@@ -2,9 +2,11 @@ cmake_minimum_required(VERSION 2.8.3)
 project(realtime_udp)
 
 ## Check if we are an ROS system first
-find_package(catkin COMPONENTS roscpp)
-if(roscpp_FOUND)
+find_package(catkin)
+if(catkin_FOUND)
     message(STATUS "Catkin found. Building ROS package")
+    ## Find catkin dependencies
+    find_package(catkin REQUIRED COMPONENTS roscpp)
     ## Make the catkin_package
     catkin_package(INCLUDE_DIRS include LIBRARIES ${PROJECT_NAME} CATKIN_DEPENDS roscpp)
     ## Set compiler flags
